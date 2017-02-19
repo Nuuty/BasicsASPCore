@@ -77,7 +77,7 @@ namespace MvcSample.Controllers
             return View(student);
 
         }
-        [HttpPost]
+        
         public IActionResult Delete(int id)
         {
             var original = _context.Students.FirstOrDefault(student => student.Id.Equals(id));
