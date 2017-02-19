@@ -1,0 +1,18 @@
+﻿@model MvcSample.Models.Student
+<h1>@Model.FirstName @Model.LastName</h1>
+
+@Html.DisplayForModel()
+<a asp-action="Edit" asp-controller="Student" asp-route-id="@Model.Id">Edit</a>
+<form asp-action="AddSubject" asp-controller="Student" asp-route-id="@Model.Id">
+    <input type="text" name="name" id="name" placeholder="name"/>
+    <input type="number" name="level" id="level" placeholder="level"/>
+    <input type="submit" value="Add Subject"/>
+</form>
+
+<h3>Subjects</h3>
+<ul>
+    @foreach (var subject in Model.Subjects)
+    {
+        <li>@subject.Name @subject.Level</li>
+    }
+</ul>

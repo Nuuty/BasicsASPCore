@@ -1,0 +1,10 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model MvcSample.Models.Student
+<h2>Edit</h2>
+<hr />
+<form asp-action="Edit" asp-controller="Student" asp-route-id="@Model.Id">
+    @Html.EditorForModel()
+    <input type="submit" value="Update" class="btn btn-default"/>
+</form>

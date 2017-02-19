@@ -1,0 +1,22 @@
+﻿@model List<MvcSample.Models.Student>
+@section header{
+    <meta name="description" content="Lists all students"/>
+}
+<h1>
+    Students
+</h1>
+<p>
+    <a asp-action="Create" asp-controller="Student">Create new student</a>
+</p>
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>
+            <a asp-action="Details" asp-controller="Student" asp-route-id="@item.Id">
+                @item.FirstName @item.LastName 
+            </a>
+            -
+            <a asp-action="Delete" asp-controller="Student" asp-route-id="@item.Id">Delete</a>
+        </li>
+    }
+</ul>
